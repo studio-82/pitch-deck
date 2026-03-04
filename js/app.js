@@ -28,6 +28,10 @@
         current = n;
         slides[current].classList.add('active');
         updateChrome();
+        // Persist current slide position
+        if (window.AgentBrowserStorage) {
+            AgentBrowserStorage.write('currentSlide.json', { slide: current }).catch(function () {});
+        }
         setTimeout(function () { transitioning = false; }, 600);
     }
 
@@ -186,12 +190,19 @@
     // Init
     updateChrome();
 
-    // Check for agent navigation request
+    // Restore slide position
     if (window.AgentBrowserStorage) {
+        // Agent nav request takes priority, then fall back to saved position
         AgentBrowserStorage.read('nav.json').then(function (data) {
             if (data && typeof data.slide === 'number') {
                 goTo(data.slide);
                 AgentBrowserStorage.delete('nav.json');
+            } else {
+                return AgentBrowserStorage.read('currentSlide.json').then(function (saved) {
+                    if (saved && typeof saved.slide === 'number') {
+                        goTo(saved.slide);
+                    }
+                });
             }
         }).catch(function () {});
     }
