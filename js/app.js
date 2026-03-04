@@ -185,4 +185,14 @@
 
     // Init
     updateChrome();
+
+    // Check for agent navigation request
+    if (window.AgentBrowserStorage) {
+        AgentBrowserStorage.read('nav.json').then(function (data) {
+            if (data && typeof data.slide === 'number') {
+                goTo(data.slide);
+                AgentBrowserStorage.delete('nav.json');
+            }
+        }).catch(function () {});
+    }
 })();
