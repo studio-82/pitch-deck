@@ -79,6 +79,9 @@ body::after {
 
 .hd--sm { font-size: clamp(28px, 3.5vw, 48px); }
 
+.hd--inv { color: var(--text-dim); }
+.hd--inv i, .hd--inv em { color: var(--text); }
+
 .bd {
     font-size: clamp(15px, 1.4vw, 18px);
     line-height: 1.65;
