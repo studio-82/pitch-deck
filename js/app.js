@@ -197,13 +197,15 @@
             if (data && typeof data.slide === 'number') {
                 goTo(data.slide);
                 AgentBrowserStorage.delete('nav.json');
-            } else {
-                return AgentBrowserStorage.read('currentSlide.json').then(function (saved) {
-                    if (saved && typeof saved.slide === 'number') {
-                        goTo(saved.slide);
-                    }
-                });
+                return;
             }
+            throw 'no nav';
+        }).catch(function () {
+            return AgentBrowserStorage.read('currentSlide.json').then(function (saved) {
+                if (saved && typeof saved.slide === 'number') {
+                    goTo(saved.slide);
+                }
+            });
         }).catch(function () {});
     }
 })();
