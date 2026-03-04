@@ -352,12 +352,11 @@
     margin-top: 20px;
 }
 .img-pair__item img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     max-height: 50vh;
-    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 12px 36px rgba(0,0,0,0.1);
-    background: var(--bg);
 }
 .img-pair__cap {
     display: block;
@@ -394,12 +393,12 @@
     text-align: center;
 }
 .result-frame img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     max-height: 55vh;
-    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 16px 48px rgba(0,0,0,0.1);
-    background: var(--bg);
+    margin: 0 auto;
 }
 
 /* ====================================================
@@ -412,12 +411,12 @@
     align-items: center;
 }
 .vid-split__media video {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     max-height: 55vh;
-    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 16px 48px rgba(0,0,0,0.1);
-    background: var(--bg);
+    background: #000;
 }
 .vid-split__text h3 {
     font-family: var(--serif);
