@@ -33,6 +33,7 @@
     width: 100%;
     max-width: 1100px;
     padding: 80px 72px;
+    flex-shrink: 0;
 }
 .s-inner--scroll {
     padding-top: 60px;
