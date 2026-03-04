@@ -647,7 +647,7 @@
 }
 
 @media (max-width: 900px) {
-    .slide { align-items: flex-start; }
+    .slide[data-i="7"] { align-items: flex-start; }
     .s-inner { padding: 48px 48px 64px; }
     .s-inner--scroll { padding-top: 48px; padding-bottom: 80px; }
     .steps { grid-template-columns: 1fr; gap: 28px; }
