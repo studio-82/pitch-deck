@@ -1,0 +1,515 @@
+/* ================================================
+   COMPONENTS.CSS — Deck, Nav, Slide Layouts
+   Hustle Fund Pitch Deck — Light Mode
+   ================================================ */
+
+/* ---- Deck Container ---- */
+.deck {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ---- Slides ---- */
+.slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.s-inner {
+    width: 100%;
+    max-width: 1100px;
+    padding: 60px 48px;
+}
+.s-inner--scroll {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+/* ---- Progress Bar ---- */
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--dark);
+    opacity: 0.18;
+    transition: width 0.4s var(--ease);
+    z-index: 200;
+    width: 0;
+}
+
+/* ---- Dots ---- */
+.dots {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 200;
+}
+.dot-btn {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    outline: none;
+}
+.dot-btn.on {
+    background: var(--dark);
+    border-color: var(--dark);
+    transform: scale(1.4);
+}
+.dot-btn:hover { border-color: rgba(26, 26, 26, 0.5); }
+
+/* ---- Arrows (bare chevron, large tap area) ---- */
+.arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: var(--dark);
+    border: none;
+    border-radius: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 200;
+    transition: opacity 0.2s ease;
+    opacity: 0.45;
+    outline: none;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1;
+    font-family: var(--sans);
+    -webkit-tap-highlight-color: transparent;
+}
+.arrow:hover { opacity: 0.85; }
+.arrow:active { opacity: 1; }
+.arrow--l { left: 16px; }
+.arrow--r { right: 16px; }
+
+/* ---- Counter ---- */
+.counter {
+    position: fixed;
+    bottom: 24px;
+    right: 28px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    z-index: 200;
+    letter-spacing: 0.05em;
+}
+
+/* ====================================================
+   TITLE
+   ==================================================== */
+.s-title .s-inner { text-align: center; }
+.s-title .bd { margin: 0 auto; }
+
+.app-icon {
+    border-radius: 10px;
+    margin: 0 auto 12px;
+    display: block;
+}
+
+.logotype {
+    font-family: var(--sans);
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin-bottom: 36px;
+}
+
+.s-title .hd { margin-bottom: 20px; }
+
+/* ====================================================
+   STEPS (How It Works)
+   ==================================================== */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 16px;
+}
+.step {
+    border-top: 1px solid var(--text-faint);
+    padding-top: 24px;
+}
+.step__n {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    display: block;
+    margin-bottom: 14px;
+}
+.step__t {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+.step__d {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+/* ====================================================
+   EXAMPLES COVER
+   ==================================================== */
+.ex-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 20px;
+    max-width: 500px;
+}
+.ex-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 0;
+    border-top: 1px solid var(--text-faint);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.ex-item:last-child { border-bottom: 1px solid var(--text-faint); }
+.ex-item:hover { background: var(--text-ghost); margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+.ex-item__title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+}
+.ex-item__desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-dim);
+}
+.ex-item__range {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 2px;
+}
+
+/* ====================================================
+   STORY TEXT
+   ==================================================== */
+.story {
+    font-size: clamp(14px, 1.3vw, 16px);
+    line-height: 1.7;
+    color: var(--text-dim);
+    max-width: 680px;
+    margin-bottom: 20px;
+}
+.story--center { text-align: center; margin: 16px auto 0; }
+.story--dim { margin-top: 12px; opacity: 0.6; }
+
+/* ====================================================
+   COLLAPSIBLE PROMPTS
+   ==================================================== */
+.prompt-collapse {
+    margin: 12px 0;
+    border: 1px solid var(--text-faint);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 680px;
+}
+.prompt-collapse__btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--text-ghost);
+    border: none;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s ease;
+}
+.prompt-collapse__btn:hover { background: var(--text-faint); }
+.prompt-collapse__btn .chevron {
+    transition: transform 0.25s ease;
+    font-size: 10px;
+}
+.prompt-collapse.open .prompt-collapse__btn .chevron {
+    transform: rotate(90deg);
+}
+.prompt-collapse__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+.prompt-collapse.open .prompt-collapse__body {
+    max-height: 600px;
+}
+.prompt-text {
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text-dim);
+    padding: 16px;
+    background: var(--bg);
+    border-top: 1px solid var(--text-faint);
+}
+
+/* ====================================================
+   PROMPT LIST (non-collapsible, for SEO section)
+   ==================================================== */
+.prompt-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px 0;
+    max-width: 680px;
+}
+.prompt-block {
+    display: flex;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--text-ghost);
+    border: 1px solid var(--text-faint);
+    border-radius: 8px;
+}
+.prompt-block__n {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    width: 18px;
+}
+.prompt-block p {
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+/* ====================================================
+   ACTION BUTTON (See Result / Reveal Output)
+   ==================================================== */
+.action-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: var(--dark);
+    color: var(--bg);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    letter-spacing: 0.01em;
+}
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* ====================================================
+   IMAGE PAIR (sketch → result)
+   ==================================================== */
+.img-pair {
+    display: grid;
+    grid-template-columns: 0.7fr auto 1.3fr;
+    gap: 16px;
+    align-items: center;
+    margin-top: 20px;
+}
+.img-pair__item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.1), 0 0 0 1px rgba(26,26,26,0.06);
+}
+.img-pair__cap {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    text-align: center;
+}
+.img-pair__arrow {
+    font-size: 24px;
+    color: var(--text-dim);
+    padding-bottom: 24px;
+}
+
+/* ====================================================
+   RESULT FRAME (single image)
+   ==================================================== */
+.result-frame {
+    margin: 0 auto 16px;
+    max-width: 880px;
+    text-align: center;
+}
+.result-frame img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.1), 0 0 0 1px rgba(26,26,26,0.06);
+}
+
+/* ====================================================
+   VIDEO SPLIT (video + text side by side)
+   ==================================================== */
+.vid-split {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+.vid-split__media video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.1), 0 0 0 1px rgba(26,26,26,0.06);
+    background: #000;
+}
+.vid-split__text h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+.vid-split__text p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+}
+
+/* ====================================================
+   PLACEHOLDER (for future assets)
+   ==================================================== */
+.placeholder-frame {
+    margin: 24px auto;
+    max-width: 700px;
+    padding: 80px 40px;
+    border: 2px dashed var(--text-faint);
+    border-radius: 12px;
+    text-align: center;
+}
+.placeholder-text {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--text-dim);
+}
+
+/* ====================================================
+   META SLIDE (pitch deck reveal)
+   ==================================================== */
+.s-meta .s-inner { text-align: center; }
+.s-meta .bd { margin: 0 auto; }
+
+/* ====================================================
+   CAPABILITIES
+   ==================================================== */
+.caps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 16px;
+}
+.cap {
+    border-top: 1px solid var(--text-faint);
+    padding-top: 20px;
+}
+.cap h3 {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+.cap p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-dim);
+}
+
+/* ====================================================
+   CTA
+   ==================================================== */
+.s-cta .s-inner { text-align: center; }
+
+.cta-logo {
+    font-family: var(--sans);
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    opacity: 0.5;
+    margin-bottom: 24px;
+}
+.cta-logo em { font-style: normal; font-weight: 600; }
+
+.cta-meta {
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-dim);
+}
+
+/* ====================================================
+   RESPONSIVE
+   ==================================================== */
+@media (max-width: 900px) {
+    .s-inner { padding: 40px 32px; }
+    .steps { grid-template-columns: 1fr; gap: 28px; }
+    .vid-split {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .img-pair {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .img-pair__arrow {
+        transform: rotate(90deg);
+        text-align: center;
+        padding-bottom: 0;
+    }
+    .caps { grid-template-columns: 1fr; }
+    .arrow { width: 44px; height: 44px; font-size: 30px; }
+    .arrow--l { left: 8px; }
+    .arrow--r { right: 8px; }
+}
+
+@media (max-width: 520px) {
+    .s-inner { padding: 32px 20px; }
+    .logotype { margin-bottom: 24px; }
+}

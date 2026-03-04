@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8f5f0">
+    <title>AgentBrowser — Pitch Deck</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+    <div class="progress" id="progress"></div>
+    <nav class="dots" id="dots"></nav>
+    <div class="counter" id="counter"></div>
+    <button class="arrow arrow--l" id="arrowL" aria-label="Previous slide">‹</button>
+    <button class="arrow arrow--r" id="arrowR" aria-label="Next slide">›</button>
+
+    <!-- ===== 0 · TITLE ===== -->
+    <section class="slide s-title active" data-i="0">
+        <div class="s-inner">
+            <img class="app-icon anim" data-d="0" src="img/app-icon.png" alt="AgentBrowser" width="40" height="40">
+            <div class="logotype anim" data-d="1">AgentBrowser</div>
+            <h1 class="hd anim" data-d="2">Describe it.<br><i>Get it.</i></h1>
+            <p class="bd anim" data-d="3">Describe what you want. Get a personalized outcome, built on demand.</p>
+        </div>
+    </section>
+
+    <!-- ===== 1 · PROBLEM ===== -->
+    <section class="slide" data-i="1">
+        <div class="s-inner">
+            <span class="label anim" data-d="0">THE PROBLEM</span>
+            <h2 class="hd anim" data-d="1">Powerful AI,<br>trapped behind a text box.</h2>
+            <p class="bd bd--lg anim" data-d="2">Tools like Claude Code have extraordinary capabilities. But those capabilities are locked inside a chat interface. The gap between what AI can do and what you can actually get from it is the interface itself.</p>
+        </div>
+    </section>
+
+    <!-- ===== 2 · ANSWER ===== -->
+    <section class="slide" data-i="2">
+        <div class="s-inner">
+            <span class="label anim" data-d="0">THE ANSWER</span>
+            <h2 class="hd anim" data-d="1">An interface built<br><i>around outcomes.</i></h2>
+            <p class="bd bd--lg anim" data-d="2">AgentBrowser doesn't give you text — it gives you what you asked for. Functional tools, visual dashboards, interactive canvases — whatever outcome you need, built on demand.</p>
+            <blockquote class="pullquote anim" data-d="3">"If you can describe the outcome, you can have it."</blockquote>
+        </div>
+    </section>
+
+    <!-- ===== 3 · HOW IT WORKS ===== -->
+    <section class="slide s-steps" data-i="3">
+        <div class="s-inner">
+            <span class="label anim" data-d="0">HOW IT WORKS</span>
+            <div class="steps">
+                <div class="step anim" data-d="1">
+                    <span class="step__n">01</span>
+                    <h3 class="step__t">Think</h3>
+                    <p class="step__d">Know what outcome you want. It can be vague or extremely specific — the tool adapts to either.</p>
+                </div>
+                <div class="step anim" data-d="2">
+                    <span class="step__n">02</span>
+                    <h3 class="step__t">Describe</h3>
+                    <p class="step__d">Tell AgentBrowser what you need. Attach images, sketches, links, files — whatever helps convey the outcome.</p>
+                </div>
+                <div class="step anim" data-d="3">
+                    <span class="step__n">03</span>
+                    <h3 class="step__t">Outcome</h3>
+                    <p class="step__d">Get a functional result you can use, refine, and share. Not a suggestion — the real thing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4 · EXAMPLES COVER ===== -->
+    <section class="slide s-examples" data-i="4">
+        <div class="s-inner">
+            <span class="label anim" data-d="0">EXAMPLES</span>
+            <h2 class="hd hd--sm anim" data-d="1">The tool at work.</h2>
+            <div class="ex-list">
+                <div class="ex-item anim" data-d="2" data-goto="5">
+                    <h3 class="ex-item__title">Housing Plan</h3>
+                    <p class="ex-item__desc">Building a house remotely — from sketch to cost estimates</p>
+                    <span class="ex-item__range">Slides 5 – 10</span>
+                </div>
+                <div class="ex-item anim" data-d="3" data-goto="11">
+                    <h3 class="ex-item__title">SEO Website Improvement</h3>
+                    <p class="ex-item__desc">Updating website copy with AI-powered marketing suggestions</p>
+                    <span class="ex-item__range">Slides 11 – 12</span>
+                </div>
+                <div class="ex-item anim" data-d="4" data-goto="13">
+                    <h3 class="ex-item__title">Building This Pitch Deck</h3>
+                    <p class="ex-item__desc">Yes — the one you're reading right now</p>
+                    <span class="ex-item__range">Slides 13 – 14</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 5 · HOUSE PLAN: CONTEXT ===== -->
+    <section class="slide" data-i="5">
+        <div class="s-inner s-inner--scroll">
+            <span class="label anim" data-d="0">EXAMPLE 01 &middot; HOUSING PLAN</span>
+            <h2 class="hd hd--sm anim" data-d="1">Building a house from<br>the other side of the world.</h2>
+            <p class="story anim" data-d="2">A person living in the US wants to build a house in Southern Africa. They wanted to sketch out what the structure would look like and send it to people on the ground to get an idea of how things would work. Gave them access to AgentBrowser.</p>
+            <div class="prompt-collapse open anim" data-d="3">
+                <button class="prompt-collapse__btn">Prompt used <span class="chevron">&#9656;</span></button>
+                <div class="prompt-collapse__body">
+                    <p class="prompt-text">"I want to create a rough sketch of a house plan. Using blocks for each room. I want to be able to name each and move them around and also having the type of room (toilet, bedroom, etc). Something for some form of simple planning. It should also support negative spaces (open area) Make it a light mode interface."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 6 · HOUSE PLAN: BLANK CANVAS ===== -->
+    <section class="slide" data-i="6">
+        <div class="s-inner">
+            <span class="label anim" data-d="0">THE CANVAS</span>
+            <div class="result-frame anim" data-d="1">
+                <img src="img/house-plan-blank.jpeg" alt="AgentBrowser generated a blank interactive floor plan tool">
+            </div>
+            <p class="story story--center anim" data-d="2">From one sentence, AgentBrowser built a fully interactive floor plan tool — room types, drag-and-drop, dimensions, grid snapping. A blank canvas ready for their vision.</p>
+        </div>
+    </section>
+
+    <!-- ===== 7 · HOUSE PLAN: SKETCH APPLIED ===== -->
+    <section class="slide" data-i="7">
+        <div class="s-inner s-inner--scroll">
+            <span class="label anim" data-d="0">FROM SKETCH TO PLAN</span>
+            <p class="story anim" data-d="1">The blank canvas was impressive on its own. But it gets better — since this is connected directly to the Claude CLI, the user could attach the rough sketch they'd made by hand and have it interpreted and applied to the canvas.</p>
+            <div class="prompt-collapse anim" data-d="2">
+                <button class="prompt-collapse__btn">Prompt 2 <span class="chevron">&#9656;</span></button>
+                <div class="prompt-collapse__body">
+                    <p class="prompt-text">"Here's a sketch of the plan, apply it to the canvas. The triangle like item is a door, the BR is the bathroom (that split is wash area vs toilet)"</p>
+                </div>
+            </div>
+            <div class="img-pair anim" data-d="3">
+                <div class="img-pair__item">
+                    <img src="img/house-plan-sketch.jpg" alt="Hand-drawn house plan sketch on paper">
+                    <span class="img-pair__cap">The hand-drawn sketch</span>
+                </div>
+                <div class="img-pair__arrow">&rarr;</div>
+                <div class="img-pair__item">
+                    <img src="img/house-plan-final.png" alt="AgentBrowser interpreted the sketch into an interactive floor plan">
+                    <span class="img-pair__cap">The generated result</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 8 · HOUSE PLAN: EXPLORATION VIDEO ===== -->
+    <section class="slide" data-i="8">
+        <div class="s-inner">
+            <span class="label anim" data-d="0">REFINING THE VISION</span>
+            <div class="vid-split">
+                <div class="vid-split__media anim" data-d="1">
+                    <video src="vid/house-plan-canvas-recording.mov" autoplay muted loop playsinline></video>
+                </div>
+                <div class="vid-split__text anim" data-d="2">
+                    <h3>A starting point for exploration</h3>
+                    <p>The sketch became a good starting point. From here, we could explore possibilities — telling Claude to improve the house plan, suggest edits that were more sensible. The person isn't an architect, so some design decisions like bathroom placement weren't appropriate. Claude could assist, spinning up different results to work with.</p>
+                    <p class="story--dim">We'd gotten a better visualization to send to the people on the ground to illustrate the desired design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 9 · HOUSE PLAN: ESTIMATES SETUP ===== -->
+    <section class="slide" data-i="9">
+        <div class="s-inner s-inner--scroll">
+            <span class="label anim" data-d="0">THE COST QUESTION</span>
+            <h2 class="hd hd--sm anim" data-d="1">Now for the pricing.</h2>
+            <p class="story anim" data-d="2">AgentBrowser already had the dimensions. We wanted material estimates and rough price estimates — with full transparency on where every number came from.</p>
+            <div class="prompt-collapse anim" data-d="4">
+                <button class="prompt-collapse__btn">Prompt 1 <span class="chevron">&#9656;</span></button>
+                <div class="prompt-collapse__body">
+                    <p class="prompt-text">"I want to be able to group items under one house / structure. Imagine drawing a rect over existing items to select them or doing a multi select to make it simple. Then I can call that group or house. Should be able to see it in sidebar on right with sub elements expanding when I click on it. Reason why I need that grouping is so that I can start doing material estimates for those clusters of houses / structures. For price estimates I'd want base prices based on a store then when I change dimensions these estimates for the different items can come up."</p>
+                </div>
+            </div>
+            <div class="prompt-collapse anim" data-d="5">
+                <button class="prompt-collapse__btn">Prompt 2 <span class="chevron">&#9656;</span></button>
+                <div class="prompt-collapse__body">
+                    <p class="prompt-text">"When showing the cost estimate here I need to have an arrow to the page so that I can actually go to it and see the price on the website. Then as I click on the different drop downs here, I can select the store which is good but I can't see where this estimate is coming from or how it's being calculated. Need to make sure that there is that level of source showing plus formula showing need to know the different constituents in their broken down detail. Even for the calculation of the number of materials. I would want to hover or click on a value like 52 tiles and understand how it got to that number or even with the bricks to say if each brick is this dimension and the dimensions are like this, it will make require this many bricks for such a house."</p>
+                </div>
+            </div>
+            <button class="action-btn anim" data-d="6" data-goto="next">See Result &rarr;</button>
+        </div>
+    </section>
+
+    <!-- ===== 10 · HOUSE PLAN: ESTIMATES RESULT ===== -->
+    <section class="slide" data-i="10">
+        <div class="s-inner">
+            <span class="label anim" data-d="0">THE ESTIMATES</span>
+            <div class="vid-split">
+                <div class="vid-split__media anim" data-d="1">
+                    <video src="vid/house-plan-estimates-recording.mov" autoplay muted loop playsinline></video>
+                </div>
+                <div class="vid-split__text anim" data-d="2">
+                    <h3>Remember the locations mentioned at the beginning of this story?</h3>
+                    <p>The reason they matter — someone in the US building in Southern Africa — is that anyone who has done this remotely knows the pain of not being able to make good material pricing estimates. Usually you have to trust the person on the ground not to overcharge you.</p>
+                    <p>So we put it into AgentBrowser. It already had the dimensions. Within a couple of hours we had material estimates, rough price ranges, every calculation transparent and linked back to its source. A person who had never done construction could now have an informed conversation with contractors — with data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 11 · SEO: SETUP ===== -->
+    <section class="slide" data-i="11">
+        <div class="s-inner s-inner--scroll">
+            <span class="label anim" data-d="0">EXAMPLE 02 &middot; SEO IMPROVEMENT</span>
+            <h2 class="hd hd--sm anim" data-d="1">Improving the website copy,<br>from inside the tool.</h2>
+            <p class="story anim" data-d="2">We built the AgentBrowser website within the AgentBrowser tool itself. Since we were using AgentBrowser, it meant we could see the output and interact with it directly using Claude Code. We then wanted to update the language on the site to make it better. We got hold of a marketing skill that is publicly available and put these 5 prompts inside AB:</p>
+            <div class="prompt-list anim" data-d="3">
+                <div class="prompt-block"><span class="prompt-block__n">1</span><p>"npx skills add coreyhaines31/marketingskills put in this skill"</p></div>
+                <div class="prompt-block"><span class="prompt-block__n">2</span><p>"Using the marketing skills item. Put a floating panel that can show suggested edits when I hover over the different elements in the page. What would be the best way to market this?"</p></div>
+                <div class="prompt-block"><span class="prompt-block__n">3</span><p>"Add functionality in floating panel to place in the suggestions in the actual place. This should change the actual underlying page item."</p></div>
+                <div class="prompt-block"><span class="prompt-block__n">4</span><p>"For the suggestions, place at least about three each so that I can choose which one best fits what I'm going for"</p></div>
+                <div class="prompt-block"><span class="prompt-block__n">5</span><p>"Put the commit trigger as a button within the hover. More like an accept changes type of thing. Clicking on it essentially tells you to commit"</p></div>
+            </div>
+            <button class="action-btn anim" data-d="4" data-goto="next">Reveal Output &rarr;</button>
+        </div>
+    </section>
+
+    <!-- ===== 12 · SEO: RESULT ===== -->
+    <section class="slide" data-i="12">
+        <div class="s-inner">
+            <span class="label anim" data-d="0">THE RESULT</span>
+            <div class="vid-split">
+                <div class="vid-split__media anim" data-d="1">
+                    <video src="vid/hook-recording.mov" autoplay muted loop playsinline></video>
+                </div>
+                <div class="vid-split__text anim" data-d="2">
+                    <h3>Marketing copy, on demand</h3>
+                    <p>Now we could hover over any element on the page, see multiple copy suggestions, and accept the ones we liked — all from within the same tool that built the site. No switching between apps. No copy-pasting between a chatbot and an editor.</p>
+                    <p class="story--dim">The outcome: a better website, refined through natural conversation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 13 · PITCH DECK: SETUP ===== -->
+    <section class="slide" data-i="13">
+        <div class="s-inner">
+            <span class="label anim" data-d="0">EXAMPLE 03 &middot; THIS PITCH DECK</span>
+            <h2 class="hd hd--sm anim" data-d="1">We needed a pitch deck<br>for Hustle Fund.</h2>
+            <p class="story anim" data-d="2">We opened AgentBrowser, described the outcome we wanted — a pitch deck that tells the story of the tool through real examples — attached the assets, and let it build.</p>
+            <div class="placeholder-frame anim" data-d="3">
+                <p class="placeholder-text">[ Starting prompt screenshot — to be added ]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 14 · PITCH DECK: META ===== -->
+    <section class="slide s-meta" data-i="14">
+        <div class="s-inner">
+            <h2 class="hd anim" data-d="0">You're already<br><i>looking at it.</i></h2>
+            <p class="bd bd--lg anim" data-d="1">There are no screenshots or video to show here — you're already using the outcome from the tool. This pitch deck was built in AgentBrowser from a single conversation.</p>
+        </div>
+    </section>
+
+    <!-- ===== 15 · CAPABILITIES ===== -->
+    <section class="slide s-caps" data-i="15">
+        <div class="s-inner">
+            <span class="label anim" data-d="0">WHY IT MATTERS</span>
+            <div class="caps">
+                <div class="cap anim" data-d="1">
+                    <h3>Infinite Flexibility</h3>
+                    <p>Claude can build almost anything. That means your outcomes are limitless — from floor plans to pitch decks to data tools.</p>
+                </div>
+                <div class="cap anim" data-d="2">
+                    <h3>Evolves With You</h3>
+                    <p>As your needs change, just describe the new outcome. No rebuilding, no new tools to learn — just a new sentence.</p>
+                </div>
+                <div class="cap anim" data-d="3">
+                    <h3>Complete Privacy</h3>
+                    <p>Everything runs on your machine. Your data never leaves. No cloud storage, no third-party access, no compromises.</p>
+                </div>
+                <div class="cap anim" data-d="4">
+                    <h3>Real Results</h3>
+                    <p>Not suggestions in a text box. Functional, visual, interactive tools you can use immediately and share with others.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 16 · CTA ===== -->
+    <section class="slide s-cta" data-i="16">
+        <div class="s-inner">
+            <h2 class="hd anim" data-d="0">Your next outcome is<br><i>one sentence away.</i></h2>
+            <div class="cta-logo anim" data-d="1">Agent<em>Browser</em></div>
+            <p class="cta-meta anim" data-d="2">macOS &middot; Free &middot; Powered by Claude Code</p>
+        </div>
+    </section>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
