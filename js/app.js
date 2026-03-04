@@ -41,7 +41,7 @@
         }
         var pct = total > 1 ? (current / (total - 1)) * 100 : 0;
         progress.style.width = pct + '%';
-        counter.innerHTML = '<span>' + (current + 1) + '</span> / <span>' + total + '</span>';
+        counter.innerHTML = '<span class="counter__current">' + (current + 1) + '</span> / <span>' + total + '</span>';
     }
 
     // Keyboard navigation
@@ -60,6 +60,34 @@
             case 'End':
                 e.preventDefault(); goTo(total - 1); break;
         }
+    });
+
+    // Counter tap-to-navigate
+    counter.addEventListener('click', function (e) {
+        var cur = e.target.closest('.counter__current');
+        if (!cur) return;
+        var input = document.createElement('input');
+        input.type = 'number';
+        input.className = 'counter__input';
+        input.min = 1;
+        input.max = total;
+        input.value = current + 1;
+        cur.replaceWith(input);
+        input.focus();
+        input.select();
+
+        function commit() {
+            var val = parseInt(input.value, 10);
+            if (val >= 1 && val <= total) {
+                goTo(val - 1);
+            }
+            updateChrome();
+        }
+        input.addEventListener('keydown', function (ev) {
+            if (ev.key === 'Enter') { ev.preventDefault(); commit(); }
+            if (ev.key === 'Escape') { ev.preventDefault(); updateChrome(); }
+        });
+        input.addEventListener('blur', commit);
     });
 
     // Arrow click
