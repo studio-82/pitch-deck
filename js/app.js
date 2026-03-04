@@ -119,6 +119,70 @@
         }
     });
 
+    // ---- Media Lightbox ----
+    var lightbox = document.getElementById('lightbox');
+    var lightboxContent = document.getElementById('lightboxContent');
+    var lightboxClose = lightbox.querySelector('.lightbox__close');
+
+    function openLightbox(el) {
+        lightboxContent.innerHTML = '';
+        if (el.tagName === 'VIDEO') {
+            var vid = document.createElement('video');
+            vid.src = el.src;
+            vid.controls = true;
+            vid.autoplay = true;
+            vid.playsInline = true;
+            lightboxContent.appendChild(vid);
+        } else if (el.tagName === 'IMG') {
+            var img = document.createElement('img');
+            img.src = el.src;
+            img.alt = el.alt || '';
+            lightboxContent.appendChild(img);
+        }
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+        // pause any playing video
+        var vid = lightboxContent.querySelector('video');
+        if (vid) vid.pause();
+    }
+
+    // Click on media to open
+    document.addEventListener('click', function (e) {
+        var img = e.target.closest('.result-frame img, .img-pair__item img');
+        if (img) { e.stopPropagation(); openLightbox(img); return; }
+        var video = e.target.closest('.vid-split__media video');
+        if (video) { e.stopPropagation(); openLightbox(video); return; }
+    });
+
+    // Close on overlay click (but not on content)
+    lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox || e.target.closest('.lightbox__close') || e.target.closest('.lightbox__hint')) {
+            closeLightbox();
+        }
+    });
+
+    // Prevent closing when clicking on the actual content
+    lightboxContent.addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
+
+    // Close button
+    lightboxClose.addEventListener('click', function () {
+        closeLightbox();
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+            closeLightbox();
+        }
+    });
+
     // Init
     updateChrome();
 })();
