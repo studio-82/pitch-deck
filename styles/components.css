@@ -32,11 +32,9 @@
 .s-inner {
     width: 100%;
     max-width: 1100px;
-    padding: 60px 48px;
+    padding: 60px 72px;
 }
 .s-inner--scroll {
-    max-height: 100vh;
-    overflow-y: auto;
     padding-top: 40px;
     padding-bottom: 80px;
 }
@@ -505,10 +503,23 @@
 }
 
 /* ====================================================
-   RESPONSIVE
+   RESPONSIVE — ALL SLIDES SCROLL WHEN CONTENT OVERFLOWS
    ==================================================== */
+
+/* Every slide should scroll if content exceeds viewport */
+.slide {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Inner content needs breathing room for arrows */
+.s-inner {
+    padding-left: 72px;
+    padding-right: 72px;
+}
+
 @media (max-width: 900px) {
-    .s-inner { padding: 40px 32px; }
+    .s-inner { padding: 40px 56px; }
     .steps { grid-template-columns: 1fr; gap: 28px; }
     .vid-split {
         grid-template-columns: 1fr;
@@ -524,12 +535,23 @@
         padding-bottom: 0;
     }
     .caps { grid-template-columns: 1fr; }
-    .arrow { width: 44px; height: 44px; font-size: 30px; }
-    .arrow--l { left: 8px; }
-    .arrow--r { right: 8px; }
+    .arrow { width: 40px; height: 40px; font-size: 26px; }
+    .arrow--l { left: 4px; }
+    .arrow--r { right: 4px; }
 }
 
 @media (max-width: 520px) {
-    .s-inner { padding: 32px 20px; }
+    .s-inner { padding: 32px 44px; }
+    .arrow { width: 32px; height: 32px; font-size: 22px; }
+    .arrow--l { left: 4px; }
+    .arrow--r { right: 4px; }
     .logotype { margin-bottom: 24px; }
+    .hd { font-size: clamp(26px, 5vw, 48px); word-wrap: break-word; }
+    .hd--sm { font-size: clamp(22px, 4vw, 36px); }
+    .story, .bd { max-width: 100%; }
+    .prompt-collapse, .prompt-list { max-width: 100%; }
+    .ex-item__title { font-size: 18px; }
+    .vid-split__text h3 { font-size: 18px; }
+    .dots { gap: 5px; }
+    .dot-btn { width: 5px; height: 5px; }
 }

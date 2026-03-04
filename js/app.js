@@ -100,13 +100,14 @@
     // ---- Action buttons (See Result / Reveal Output) ----
     document.addEventListener('click', function (e) {
         var btn = e.target.closest('.action-btn');
-        if (btn) {
-            var target = btn.getAttribute('data-goto');
-            if (target === 'next') {
-                goTo(current + 1);
-            } else {
-                goTo(parseInt(target, 10));
-            }
+        if (!btn) return;
+        var target = btn.getAttribute('data-goto');
+        if (!target) return; // skip external links (e.g. download)
+        e.preventDefault();
+        if (target === 'next') {
+            goTo(current + 1);
+        } else {
+            goTo(parseInt(target, 10));
         }
     });
 
