@@ -647,7 +647,7 @@
 
 @media (max-width: 900px) {
     .s-inner { padding: 48px 48px 64px; }
-    .s-inner--scroll { padding-top: 36px; padding-bottom: 80px; }
+    .s-inner--scroll { padding-top: 48px; padding-bottom: 80px; }
     .steps { grid-template-columns: 1fr; gap: 28px; }
     .vid-split {
         grid-template-columns: 1fr;
@@ -670,7 +670,7 @@
 
 @media (max-width: 520px) {
     .s-inner { padding: 36px 24px 56px; }
-    .s-inner--scroll { padding-top: 28px; padding-bottom: 72px; }
+    .s-inner--scroll { padding-top: 48px; padding-bottom: 72px; }
     .arrow { display: none; }
     .logotype { margin-bottom: 24px; }
     .hd { font-size: clamp(26px, 5vw, 48px); word-wrap: break-word; }
