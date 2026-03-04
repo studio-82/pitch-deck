@@ -671,9 +671,7 @@
 @media (max-width: 520px) {
     .s-inner { padding: 36px 24px 56px; }
     .s-inner--scroll { padding-top: 28px; padding-bottom: 72px; }
-    .arrow { width: 32px; height: 32px; font-size: 22px; }
-    .arrow--l { left: 4px; }
-    .arrow--r { right: 4px; }
+    .arrow { display: none; }
     .logotype { margin-bottom: 24px; }
     .hd { font-size: clamp(26px, 5vw, 48px); word-wrap: break-word; }
     .hd--sm { font-size: clamp(22px, 4vw, 36px); }
